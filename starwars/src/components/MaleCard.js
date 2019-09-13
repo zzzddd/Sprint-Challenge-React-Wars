@@ -24,15 +24,15 @@ const MaleCard = props => {
   const hairColor = props.character["hair_color"];
   const eyeColor = props.character["eye_color"];
 
-  const [pic, setPic] = useState(false);
+  const [pic, setPic] = useState("");
 
-//   useEffect(() => {
-//     axios
-//       .get("https://swapi.co/documentation#male")
-//       .then(res => setPic(res.request.responseURL))
-      
-//       .catch(err => console.log(`Error: ${err}`));
-//   }, [pic]);
+  useEffect(() => {
+    axios
+      .get("https://source.unsplash.com/1600x900/?male")
+      .then(res => setPic(res.request.responseURL))
+
+      .catch(err => console.log(`Error: ${err}`));
+  }, [pic]);
 
   return (
     <Male>

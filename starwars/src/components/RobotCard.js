@@ -23,15 +23,15 @@ const RobotCard = props => {
   const eyeColor = props.character["eye_color"];
   const skinColor = props.character["skin_color"];
 
-  const [pic, setPic] = useState(false);
+  const [pic, setPic] = useState("");
 
-//   useEffect(() => {
-//     axios
-//       .get("https://swapi.co/documentation#robot")
-//       .then(res => setPic(res.request.responseURL))
-      
-//       .catch(err => console.log(`Error: ${err}`));
-//   }, [pic]);
+  useEffect(() => {
+    axios
+      .get("https://source.unsplash.com/1600x900/?robot")
+      .then(res => setPic(res.request.responseURL))
+
+      .catch(err => console.log(`Error: ${err}`));
+  }, [pic]);
 
   return (
     <Robot>

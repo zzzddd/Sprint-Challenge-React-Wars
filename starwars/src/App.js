@@ -3,10 +3,12 @@ import "./App.css";
 import axios from "axios";
 import { CharacterList } from "./components/CharacterList";
 import styled from "styled-components";
+import { Button, Alert, Spinner } from "reactstrap";
 const PageTitle = styled.h1`
   font-size: 5rem;
   &:hover {
     color: red;
+    
   }
 `;
 const App = () => {
@@ -21,7 +23,7 @@ const App = () => {
     axios
       .get("https://swapi.co/api/people/")
       .then(res => {
-        console.log("App axios",res.data.results);
+        console.log("App axios", res.data.results);
         setCharacters(res.data.results);
       })
       .catch(err => console.log(`Error: ${err}`));
