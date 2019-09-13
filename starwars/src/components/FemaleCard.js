@@ -25,17 +25,17 @@ const FemaleCard = props => {
   const eyeColor = props.character["eye_color"];
 
   //set a default one, getting the other one from Upsplash API
-  const [pic, setPic] = useState("false");
+  const [pic, setPic] = useState("");
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://swapi.co/documentation#female`)
-  //     .then(res => {
-  //       setPic(res.request.responseURL);
-  //       console.log("Female axios", res.request.responseURL);
-  //     })
-  //     .catch(err => console.log(`Error: ${err}`));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`https://source.unsplash.com/1600x900/?female`)
+      .then(res => {
+        setPic(res.request.responseURL);
+        console.log("Female axios", res.request.responseURL);
+      })
+      .catch(err => console.log(`Error: ${err}`));
+  }, []);
 
   return (
     <Female>
